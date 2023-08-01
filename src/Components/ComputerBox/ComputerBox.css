@@ -1,0 +1,98 @@
+
+.discount-badge{
+    background-color: var(--accent-color-1);
+    font-weight: 500;
+    color: var(--light-gray);
+    padding: 5px;
+    border-radius: 10px;
+}
+.card{ 
+    margin: auto;
+    cursor: pointer;
+    
+}
+
+.card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+
+.card-img-top {
+    background-image: url("../../media/Objects/BackgroundImage.png");
+    background-size: cover;
+}
+.card-title {
+    color: var(--light-gray);
+}
+
+.card-text span {
+    text-decoration: line-through;
+    color: var(--accent-color-1)
+}
+
+.card-body {
+    padding: 5px !important;
+    margin-top: auto;
+    height: fit-content;
+    background-color: rgba(0, 123, 255, 0.4);
+}
+
+
+
+.card-text:last-child{
+    color: var(--light-gray);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+/* MODAL STYLING */
+
+.imgCol{
+    background-image: url("../../media/Objects/BackgroundImageModal.png");
+    background-size: cover;
+    text-align: center;
+}
+
+.dataCol .color-buttons {
+    display: flex;
+    gap:5px;
+    padding: 0.5rem 0
+}
+.dataCol .color-button{
+    padding: 10px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dataCol .color-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 20px;
+}
+
+.dataCol .ram-button{
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: smaller;
+}
+
+.dataCol .ram-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 10px;
+}
+
+.dataCol .storage-button{
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: smaller;
+}
+
+.dataCol .storage-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 10px;
+}

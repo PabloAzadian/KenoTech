@@ -1,0 +1,48 @@
+.imgCol{
+    background-image: url("../../media/Objects/BackgroundImageModal.png");
+    background-size: cover;
+    text-align: center;
+}
+
+.dataCol .color-buttons {
+    display: flex;
+    gap:5px;
+    padding: 0.5rem 0
+}
+.dataCol .color-button{
+    padding: 10px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dataCol .color-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 20px;
+}
+
+.dataCol .ram-button{
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: smaller;
+}
+
+.dataCol .ram-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 10px;
+}
+
+.dataCol .storage-button{
+    padding: 5px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: smaller;
+}
+
+.dataCol .storage-button.active{
+    border: 2px solid var(--accent-color-1);
+    border-radius: 10px;
+}

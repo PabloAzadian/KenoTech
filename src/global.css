@@ -1,0 +1,13 @@
+:root {
+    /* Main Colors */
+    --main-color: #007BFF;
+    --secondary-color: #6EC6FF;
+  
+    /* Accent Colors */
+    --accent-color-1: #28A745;
+    --accent-color-2: #B4EBCF;
+  
+    /* Neutral Colors */
+    --dark-gray: #333333;
+    --light-gray: #F2F2F2;
+  }

@@ -1,0 +1,43 @@
+#NavBar{
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-family: Rubik,sans-serif;
+    transition: all 0.3s;
+    opacity: 0.9;
+    z-index: 2;
+    background-color: var(--accent-color-2) !important;
+}
+
+#brand {
+    display: flex;
+    gap: 0.5rem;
+}
+
+h2 span {
+    color:var(--accent-color-2);
+    font-weight: 700;
+}
+
+h2 {
+    color:var(--secondary-color);
+    font-weight: 700;
+}
+
+
+.nav-link {
+    white-space: nowrap;
+    color: var(--main-color);
+}
+ @media (max-width: 1200px) {
+    .nav-link {
+        font-size: smaller;
+    }
+    
+ }
+
+
+
+.navbar-nav.btn-primary{
+    padding: 0;
+}
+
