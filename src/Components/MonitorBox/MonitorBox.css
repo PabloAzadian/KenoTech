@@ -63,29 +63,13 @@
     color: var(--main-color);
 }
 
-.dataCol .color-buttons {
-    display: flex;
-    gap:5px;
-    padding: 0.5rem 0
-}
-.dataCol .color-button{
-    padding: 10px;
-    border: 0.5px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.dataCol .color-button.active{
-    border: 2px solid var(--accent-color-1);
-    border-radius: 20px;
-}
-
 
 .modal-header {
     background-color: var(--accent-color-2);
     color: var(--main-color);
     border-color: var(--main-color);
 }
+
 
 .modal-footer{
     background-color: var(--accent-color-2);

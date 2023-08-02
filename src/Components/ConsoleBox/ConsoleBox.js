@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DesktopPC from "../../media/Objects/DesktopPC.png"
+import DesktopPC from "../../media/Objects/ps5.png"
 import "./ConsoleBox.css"
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
@@ -38,7 +38,8 @@ function ConsoleBox(props) {
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount)
   return (
-    <div>
+    <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
+
     <Card onClick={handleOpenModal}style={{ width: '18rem' }}>
       <Card.Img variant="top" src={DesktopPC} />
       <Card.Body className='card-img-overlay'>
@@ -61,7 +62,7 @@ function ConsoleBox(props) {
     <Container>
         <Row>
             <Col xs={"12"}className='imgCol'>
-                <img width="150" height="200" src={DesktopPC}/>
+                <img width="240" height="240" src={DesktopPC}/>
             </Col>
         </Row>
         <div className='modal-text-container'>

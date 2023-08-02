@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import DesktopPC from "../../media/Objects/DesktopPC.png"
-import "./ComputerBox.css"
+import DesktopPC from "../../media/Objects/Monitor.png"
+import "./MonitorBox.css"
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
 import BasketCart from "../../media/basket-cart-icon-27.png"
@@ -8,10 +8,23 @@ import BasketCart from "../../media/basket-cart-icon-27.png"
 
 const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h6>)
 
-function ItemBox(props) {
+
+    const item = {
+        name: "ASUS ROG Swift PG279Q",
+        price: 700,
+        category: "Monitor",
+        imgSrc: "ASUSROGSwiftPG279Q.jpg",
+        displaySize: "27 inches",
+        resolution: "2560 x 1440 (Quad HD)",
+        refreshRate: "165Hz",
+        panelType: "IPS",
+        colors: ["Black"],
+        discount: 0,
+      }
+
+
+function MonitorBox(props) {
     const [selectedColor, setSelectedColor] = useState(props.item.colors[0])
-    const [selectedRam, setSelectedRam] = useState(props.item.rams[0])
-    const [selectedStorage, setSelectedStorage] = useState(props.item.storages[0])
     const [activeModal, setActiveModal] = useState(false)
 
     const handleOpenModal = () => {
@@ -24,9 +37,10 @@ function ItemBox(props) {
 
   
     props.item.discountedPrice= (props.item.price-props.item.discount) 
-    props.item.finalPrice = (props.item.price - props.item.discount + selectedRam.priceDifference + selectedStorage.priceDifference)
+    props.item.finalPrice = (props.item.price - props.item.discount)
   return (
-    <div>
+    <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
+
     <Card onClick={handleOpenModal}style={{ width: '18rem' }}>
       <Card.Img variant="top" src={DesktopPC} />
       <Card.Body className='card-img-overlay'>
@@ -48,67 +62,38 @@ function ItemBox(props) {
   <Modal.Body>
     <Container>
         <Row>
-            <Col className='imgCol'>
-                <img width="150" height="200" src={DesktopPC}/>
+            <Col xs={"12"}className='imgCol'>
+                <img width="240" height="240" src={DesktopPC}/>
             </Col>
+        </Row>
+        <div className='modal-text-container'>
+        <Row>
             <Col className='dataCol'>
-                <h5>Processor:</h5>
-                <p>{props.item.processor}</p>
-                <h5>Graphic Card:</h5>
-                <p>{props.item.gpu}</p>
-                <p>
-                    <h5>Available Colors:</h5>
-                    <div className="color-buttons">
-                        {props.item.colors.map((color) => (
-                        <button
-                            key={color}
-                            className={`color-button ${selectedColor === color ? "active" : ""}`}
-                            style={{ backgroundColor: color }}
-                            onClick={() => setSelectedColor(color)}
-                        >
-                            
-                        </button>
-                        ))}
-                    </div>
-                </p>
+                <h5>Display Size:</h5>
+                <p>{props.item.displaySize}</p>
+
+            </Col>
+            <Col>
+                <h5>Resolution:</h5>
+                <p>{props.item.resolution}</p>
             </Col>
         </Row>
         <Row>
-            <Col className='dataCol p-3' xs={12} >
-                <h5>Select your desired RAM</h5>
-                <div className="ram-buttons d-flex  gap-3">
-                    
-                        {props.item.rams.map((ram) => (
-                        <button
-                            key={ram.name}
-                            className={`ram-button ${selectedRam.name === ram.name ? "active" : ""}`}
-                            
-                            onClick={() => setSelectedRam(ram)}
-                        >
-                            <h6>{ram.name}</h6>
-                            {ram.priceDifference? `+${ram.priceDifference}$` : "Already Included"}
-                        </button>
-                        ))}
-                </div>      
+            <Col className='dataCol'>
+            <h5>Refresh Rate:</h5>
+                <div>
+                    <p>{props.item.refreshRate}</p>
+                </div> 
             </Col>
-            <Col className='dataCol'xs={12}>
-                <h5>Select your desired Storage Capacity:</h5>
-                <div className="storage-buttons d-flex  gap-3">
-                    
-                        {props.item.storages.map((storage) => (
-                        <button
-                            key={storage.name}
-                            className={`storage-button ${selectedStorage.name === storage.name ? "active" : ""}`}
-                            
-                            onClick={() => setSelectedStorage(storage)}
-                        >
-                            <h6>{storage.name}</h6>
-                            {storage.priceDifference? `+${storage.priceDifference}$` : "Already Included"}
-                        </button>
-                        ))}
-                </div>  
-            </Col>
+            <Col className='dataCol'>
+                <h5>Panel Type:</h5>
+                <div>
+                    <p>{props.item.panelType}</p>
+                </div> 
+            </Col>    
         </Row>
+        </div>
+        
         
                 </Container>
             </Modal.Body>
@@ -129,4 +114,4 @@ function ItemBox(props) {
   )
 }
 
-export default ItemBox
+export default MonitorBox;

@@ -5,6 +5,29 @@
     flex-wrap: nowrap;
     padding: 2rem;
     overflow-x: scroll;
+    margin-top: -10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+
+}
+
+/* The thumb (the draggable part) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color); /* Change this to the color you want for the thumb */
+  border-radius: 5px;
+}
+
+/* On hover, the thumb will be a little darker */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+/* The scrollbar track when the thumb is being dragged */
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--main-color);
 }
   
 .categories-container button {
@@ -20,25 +43,9 @@
     padding: 0;
     
   }
-  @media (min-width:768px) {
-    .categories-container{
-      overflow: hidden;
-    }
-    
-  }
-  @media (max-width: 767px) {
-    .categories-container button{
-        animation: scrollAnimation 50s linear 2;
-        animation-delay: 5s;
-        overflow-x: auto; 
-    }
-    .categories-container:hover button {
-        animation-play-state: initial;
-        transform: translateX(0);
-    }
-    
+  
+  
 
-  }
 
 .categories-container img {
     width: 100%;
@@ -58,7 +65,7 @@
     font-family: cursive;
     font-size: 1.2rem;
     font-weight: 550;
-    color: var(--dark-gray);
+    color: var(--main-color);
     
   }
 
@@ -66,22 +73,4 @@
 
 .categories-container button:hover img {
     transform: scale(1.1);
-  }
-
-  @keyframes scrollAnimation {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-150%); /* Adjust this value to control the scrolling speed */
-    }
-  }
-
-  @keyframes hoverAnimation {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(0);
-    }
   }

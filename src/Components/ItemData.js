@@ -135,7 +135,7 @@ export const ItemData = [
         ],
         gpu: "Nvidia GTX 3060",
         colors: ["Gray", "Black"],
-        discount: 0,
+        discount: 300,
       },
     
       {
@@ -173,7 +173,7 @@ export const ItemData = [
           ],
           gpu: "Nvidia RTX 3060",
           colors: ["Silver", "Black", "Blue"],
-          discount: 0,
+          discount: 150,
         },
         {
           name: "ZenBook Air",
@@ -251,7 +251,7 @@ export const ItemData = [
           storage: "1TB NVMe SSD",
           gpu: "AMD Radeon RDNA 2",
           colors: ["Black"],
-          discount: 0,
+          discount: 50,
         },
         {
           name: "Nintendo Switch",
@@ -284,7 +284,7 @@ export const ItemData = [
           storage: "512GB NVMe SSD",
           gpu: "AMD Radeon RDNA 2",
           colors: ["White"],
-          discount: 0,
+          discount: 40,
         },
         {
           name: "Nintendo Switch OLED",
@@ -321,7 +321,7 @@ export const ItemData = [
           refreshRate: "165Hz",
           panelType: "IPS",
           colors: ["Black"],
-          discount: 0,
+          discount: 130,
         },
         {
           name: "LG 27GL850-B",
@@ -357,7 +357,7 @@ export const ItemData = [
           refreshRate: "240Hz",
           panelType: "VA",
           colors: ["Black"],
-          discount: 0,
+          discount: 150,
         },
         {
           name: "ViewSonic XG2402",
@@ -395,7 +395,7 @@ export const ItemData = [
           soundType: "DTS Headphone:X v2.0",
           microphone: "Retractable ClearCast",
           colors: ["Black"],
-          discount: 0,
+          discount: 40,
         },
         {
           name: "Razer BlackShark V2 Pro",
@@ -443,7 +443,7 @@ export const ItemData = [
           soundType: "Open-Back Audiophile Headphones",
           microphone: "No microphone",
           colors: ["Black"],
-          discount: 0,
+          discount: 80,
         },
       ],
       // Add more categories...
