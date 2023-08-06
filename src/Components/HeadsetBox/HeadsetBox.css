@@ -49,7 +49,7 @@
 /* MODAL STYLING */
 
 .imgCol{
-    background-image: url("../../media/Objects/BackgroundImageModal.png");
+    background-image: url("../../media/background/bg2.jpg");
     background-size: cover;
     text-align: center;
     border: 1px solid var(--main-color);

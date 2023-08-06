@@ -4,7 +4,8 @@ import Laptop from "../../media/Objects/Laptop.png"
 import "./ComputerBox.css"
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
-import BasketCart from "../../media/basket-cart-icon-27.png"
+import BasketCart from "../../media/icons/basket-cart-icon-27.png"
+import star from "../../media/icons/star icon.png"
 
 
 const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h6>)
@@ -23,34 +24,42 @@ function ComputerBox(props) {
         setActiveModal(false);
     }
 
-  
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount + selectedRam.priceDifference + selectedStorage.priceDifference)
   return (
     <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
-        <Card onClick={handleOpenModal} style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={props.img === "laptop" ? Laptop : DesktopPC} />
-        <Card.Body className='card-img-overlay'>
-            <Card.Title className='d-flex flex-row gap-2'>{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
-            <Card.Text>
+    
+        <Card onClick={handleOpenModal} >
+        <Card.Img variant="top" src={props.item.imgSrc} />
+        <Card.Body>
+            <Card.Title >{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
+            <Card.Text >
+                <div className='ratings'>
+                    <p>{props.item.rating}/5 <img src={star} height={"30px"} width={"20px"}/> <span class="bi bi-star"></span>({props.item.reviews} reviews)</p>
+                </div>
+                <div className='prices gap-2'>
             {props.item.discount? 
-                (<div className='d-flex flex-row gap-2'> <span>{props.item.price}$</span><p>{props.item.discountedPrice}$</p> </div>)
+                (<div className=''> <span>{props.item.price}$</span><h3>{props.item.discountedPrice}$</h3> </div>)
                 :
-                props.item.price + "$"} 
+                <div>
+                
+                <h3>{props.item.price}$ </h3>
+                </div>} 
+                </div>
             </Card.Text>
         </Card.Body>
         </Card>
 
         
-        <Modal show={activeModal} onHide={handleCloseModal}>
+         <Modal show={activeModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
                     <Modal.Title>{props.item.name}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body scrollable>
                 <Container>
                     <Row>
                         <Col className='imgCol'>
-                             <img width="240" height="240" src={props.img === "laptop" ? Laptop : DesktopPC}/>
+                            <img  height={"240px"} width={"240px"}src={props.item.imgSrc}/>
                         </Col>
                         <Col className='dataCol'>
                             <h5>Processor:</h5>
@@ -118,7 +127,12 @@ function ComputerBox(props) {
 
                             </button>
                     </Modal.Footer>
-                </Modal>
+        </Modal>
+
+        
+
+       
+
            
 </div>
     

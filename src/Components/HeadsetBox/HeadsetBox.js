@@ -3,7 +3,8 @@ import DesktopPC from "../../media/Objects/Headset.png"
 import "./HeadsetBox.css"
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
-import BasketCart from "../../media/basket-cart-icon-27.png"
+import BasketCart from "../../media/icons/basket-cart-icon-27.png"
+import star from "../../media/icons/star icon.png"
 
 
 const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h6>)
@@ -41,18 +42,26 @@ function HeadsetBox(props) {
   return (
     <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
 
-    <Card onClick={handleOpenModal}style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={DesktopPC} />
-      <Card.Body className='card-img-overlay'>
-        <Card.Title className='d-flex flex-row gap-2'>{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
-        <Card.Text>
-        {props.item.discount? 
-            (<div className='d-flex flex-row gap-2'> <span>{props.item.price}$</span><p>{props.item.discountedPrice}$</p> </div>)
-            :
-             props.item.price + "$"} 
-        </Card.Text>
-      </Card.Body>
-    </Card>
+<Card onClick={handleOpenModal} >
+        <Card.Img variant="top" src={props.item.imgSrc} />  
+        <Card.Body>
+            <Card.Title >{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
+            <Card.Text >
+                <div className='ratings'>
+                    <p>{props.item.rating}/5 <img src={star} height={"30px"} width={"20px"}/> <span class="bi bi-star"></span>({props.item.reviews} reviews)</p>
+                </div>
+                <div className='d-flex flex-row prices'>
+            {props.item.discount? 
+                (<div className='gap-2'> <span>{props.item.price}$</span><h3>{props.item.discountedPrice}$</h3> </div>)
+                :
+                <div>
+                
+                <h3>{props.item.price}$ </h3>
+                </div>} 
+                </div>
+            </Card.Text>
+        </Card.Body>
+        </Card>
 
 <div>
 <Modal show={activeModal} onHide={handleCloseModal}>
@@ -63,7 +72,7 @@ function HeadsetBox(props) {
     <Container>
         <Row>
             <Col xs={"12"}className='imgCol'>
-                <img width="240" height="240" src={DesktopPC}/>
+                <img width="240" height="240" src={props.item.imgSrc}/>
             </Col>
         </Row>
         <div className='modal-text-container'>
