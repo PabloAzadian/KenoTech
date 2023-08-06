@@ -5,7 +5,7 @@
     flex-wrap: nowrap;
     padding: 2rem;
     overflow-x: scroll;
-    margin-top: -10px;
+    max-width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -13,23 +13,17 @@
   height: 10px;
 
 }
-
-/* The thumb (the draggable part) of the scrollbar */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--secondary-color); /* Change this to the color you want for the thumb */
+  background-color: var(--secondary-color); 
   border-radius: 5px;
 }
 
-/* On hover, the thumb will be a little darker */
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--secondary-color);
 }
 
-/* The scrollbar track when the thumb is being dragged */
-::-webkit-scrollbar-thumb:active {
-  background-color: var(--main-color);
-}
-  
+
 .categories-container button {
     flex: 0 0 auto; 
     white-space: nowrap; 
@@ -37,11 +31,10 @@
     position: relative;
     border-radius: 10px;
     border: none;
-    box-shadow: 0 20px 15px var(--light-gray);
     cursor: pointer;
     overflow: hidden;
     padding: 0;
-    
+    background-color: white;
   }
   
   
@@ -55,14 +48,20 @@
     transition: transform 0.3s ease;
   }
 
+  @media (max-width: 768px)
+   {
+    .categories-container img{
+      width: 70%;
+      height: 70%;
+    }
+   }
+
   .categories-container h2 {
-    position: absolute;
-    bottom: 30%;
-    text-align: left;
+    text-align: center;
     width: 100%;
     margin: 0;
     padding: 0.5rem;
-    font-family: cursive;
+    font-family: 'Noto Sans Display', sans-serif;
     font-size: 1.2rem;
     font-weight: 550;
     color: var(--main-color);
@@ -74,3 +73,9 @@
 .categories-container button:hover img {
     transform: scale(1.1);
   }
+
+  .categories-container button:hover {
+    box-shadow: 0 20px 15px var(--light-gray);
+  }
+
+  
