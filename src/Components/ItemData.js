@@ -124,6 +124,7 @@ export const ItemData = [
       rating: "4.6",
       reviews: 128,
       finalPrice: 1700,
+      new: true,
     },
     {
       name: "WorkForce Pro",
@@ -449,6 +450,7 @@ export const ItemData = [
       rating: "4.7",
       reviews: 128,
       finalPrice: 450,
+      
     },
     {
       name: "Acer R240HY",
@@ -494,6 +496,7 @@ export const ItemData = [
       rating: "4.2",
       reviews: 75,
       finalPrice: 250,
+      new: true,
     },
   ],
   [

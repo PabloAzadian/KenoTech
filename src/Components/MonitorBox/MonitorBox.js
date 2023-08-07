@@ -50,6 +50,12 @@ function MonitorBox(props) {
         setActiveModal(false);
     }
 
+    const handleAddToCart = () => {
+        props.setShoppingCart(prevCart => [...prevCart, props.item])
+        setActiveModal(false)
+        alert(`Succesfully added ${props.item.name} to the Cart!`)
+    }
+
   
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount)
@@ -122,11 +128,11 @@ function MonitorBox(props) {
             </Modal.Body>
             <Modal.Footer className='d-flex justify-content-between'>
             <h5>Final Price: {props.item.finalPrice}$</h5>
-            <button>
-                Add to Cart{" "}{" "}
-                <img width="40px" src={BasketCart}/>
+                            <button onClick={handleAddToCart} className='d-flex gap-3 align-center'>
+                                <p className='m-auto'>Add to Cart</p>
+                                <img width="40px" src={BasketCart}/>
 
-            </button>
+                            </button>
             </Modal.Footer>
             </Modal>
             </div>

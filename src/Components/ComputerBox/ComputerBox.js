@@ -40,6 +40,12 @@ function ComputerBox(props) {
         setActiveModal(false);
     }
 
+    const handleAddToCart = () => {
+        props.setShoppingCart(prevCart => [...prevCart, props.item])
+        setActiveModal(false)
+        alert(`Succesfully added ${props.item.name} to the Cart!`)
+    }
+
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount + selectedRam.priceDifference + selectedStorage.priceDifference)
   return (
@@ -67,7 +73,7 @@ function ComputerBox(props) {
         </Card>
 
         
-         <Modal show={activeModal} onHide={handleCloseModal} ClassName="modal-90w">
+         <Modal show={activeModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
                     <Modal.Title>{props.item.name}</Modal.Title>
             </Modal.Header>
@@ -137,8 +143,8 @@ function ComputerBox(props) {
                     </Modal.Body>
                     <Modal.Footer className='d-flex justify-content-between'>
                             <h5>Final Price: {props.item.finalPrice}$</h5>
-                            <button>
-                                Add to Cart{" "}{" "}
+                            <button onClick={handleAddToCart} className='d-flex gap-3 align-center'>
+                                <p className='m-auto'>Add to Cart</p>
                                 <img width="40px" src={BasketCart}/>
 
                             </button>

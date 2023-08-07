@@ -48,7 +48,7 @@ function NavBar(props) {
             <Nav className='gap-4'>
             <Nav.Link  className="m-auto p-2">Home</Nav.Link>
             <NavDropdown className="m-auto p-2" title="Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Desktop Computers</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Daesktop Computers</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Notebooks</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Consoles</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Monitors</NavDropdown.Item>
@@ -62,7 +62,6 @@ function NavBar(props) {
             <Nav.Link  className="m-auto p-2">Build your PC</Nav.Link>
             <Nav.Link  className="m-auto p-2">About Us</Nav.Link>
             <Nav.Link  className="m-auto p-2">Contact</Nav.Link>
-            {/* <Nav.Link  className="m-auto p-2">Build your Own PC</Nav.Link> */}
             <Nav.Link  className="cart-img m-auto p-2"><img
             
                 onClick={() => setShow(true)}
@@ -86,7 +85,12 @@ function NavBar(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='overflow-scroll'>
-        {props.shoppingCart.map((item, index) => <SideCartItem removeItem={removeItem} item={item} index={index}/>)}
+        {props.shoppingCart.length >0 ? props.shoppingCart.map((item, index) => <SideCartItem removeItem={removeItem} item={item} index={index}/>)
+        :
+        <div className='empty-cart'>
+          <h3>Looks like your Cart is empty {":("}</h3>
+          <button onClick={() => setShow(false)}>Keep Browsing</button>
+        </div>}
         </Modal.Body>
         <Modal.Footer className='d-flex justify-content-between'>
             <h5>Total Price: {calculateTotalPrice()}$</h5>

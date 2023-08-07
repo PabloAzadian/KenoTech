@@ -1,15 +1,17 @@
 import Categories from "../Components/Categories/Categories";
 import ImageCarrousel from "../Components/ImageCarrousel/ImageCarrousel";
 import ItemDisplayer from "../Components/ItemDisplayer/ItemDisplayer";
+import BuildYourOwnPcBanner from "../Components/BuildYourOwnPc/BuildYourOwnPcBanner";
 
-function Home() {
+function Home({setShoppingCart}) {
 return (
     <>
         <ImageCarrousel/>
         <Categories/>
         
-        <ItemDisplayer type="discounted" inline={true} title="This Month's Sales"/>
-        <Categories/>
+        <ItemDisplayer type="discounted" setShoppingCart={setShoppingCart} inline={true} title="Monthly Sales"/>
+        <BuildYourOwnPcBanner/>
+        <ItemDisplayer type="new" setShoppingCart={setShoppingCart} inline={true} title="Our New Items"/>
     </>
   )  
 }
