@@ -18,13 +18,16 @@ import ViewSonic from "../media/items/Monitors/viewSonic.png"
 import Samsung from "../media/items/Monitors/samsung.png"
 import Acer from "../media/items/Monitors/acer.png"
 import Lg from "../media/items/Monitors/LG.png"
+import CorsairVoyager from "../media/items/Notebooks/7.png"
 //
-import Cloud2 from "../media/items/Headsets/Cloud2.png"
+import Cloud2 from "../media/items/Headsets/Cloud2 cable.png"
 import Razer from "../media/items/Headsets/Razer.png"
 import Sennheiser from "../media/items/Headsets/senn.png"
 import SteelSeries from "../media/items/Headsets/SteelS.png"
 import Logitech from "../media/items/Headsets/logitech.png"
 import Corsair from "../media/items/Headsets/corsair.png"
+import HyperX from "../media/items/Headsets/Cloud2.png"
+import Astro from "../media/items/Headsets/Astro.png"
 //
 import ps5 from "../media/items/Consoles/ps5.png"
 import XboxSeriesX from "../media/items/Consoles/Xbox series x.png"
@@ -167,6 +170,28 @@ export const ItemData = [
   ],
   [
     {
+      name: "Corsair VOYAGER a1600",
+      price: 2000,
+      category: "Laptop and Notebook",
+      imgSrc: CorsairVoyager,
+      processor: "Intel Core i7-11700H",
+      rams: [
+        { name: "16GB DDR4", priceDifference: 0 },
+        { name: "32GB DDR4", priceDifference: 200 },
+      ],
+      storages: [
+        { name: "512GB NVMe SSD", priceDifference: 0 },
+        { name: "1TB NVMe SSD", priceDifference: 100 },
+      ],
+      gpu: "Nvidia RTX 3060",
+      colors: ["Black"],
+      discount: 200,
+      rating: "4.8",
+      reviews: 15,
+      finalPrice: 2000,
+      new:true,
+    },
+    {
       name: "Ultrablade",
       price: 1600,
       category: "Laptop and Notebook",
@@ -291,7 +316,7 @@ export const ItemData = [
       rating: "4.8",
       reviews: 220,
       finalPrice: 2200,
-    },
+    }
   ],
   [
     {
@@ -473,6 +498,38 @@ export const ItemData = [
   ],
   [
     {
+      name: "HyperX Cloud Alpha Wireless",
+      price: 150,
+      category: "Headset",
+      imgSrc: HyperX,
+      connectionType: "Wireless (2.4 GHz USB Dongle)",
+      compatibility: "PC, PS4, PS5, Xbox One",
+      soundType: "Virtual Surround Sound",
+      microphone: "Detachable Noise-Canceling",
+      colors: ["Black"],
+      discount: 0,
+      rating: "4.8",
+      reviews: 42,
+      finalPrice: 150,
+      new: true,
+    },
+    {
+      name: "Astro A30 Wireless",
+      price: 200,
+      category: "Headset",
+      imgSrc: Astro,
+      connectionType: "Wireless (2.4 GHz USB Dongle)",
+      compatibility: "PC, PS4, Xbox One",
+      soundType: "Stereo",
+      microphone: "Detachable Noise-Canceling",
+      colors: ["Black", "White"],
+      discount: 0,
+      rating: "4.5",
+      reviews: 35,
+      finalPrice: 200,
+      new: true,
+    },
+    {
       name: "HyperX Cloud II",
       price: 100,
       category: "Headset",
@@ -561,8 +618,9 @@ export const ItemData = [
       rating: "4.9",
       reviews: 168,
       finalPrice: 350,
-    },
+    }
   ]
+
       // Add more categories...
     ];
     

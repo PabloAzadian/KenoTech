@@ -44,9 +44,7 @@ function ImageCarrousel({ handleCategory}) {
           src={hyperXImgSrc}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h5>Get your Wireless Cloud Alpha's</h5>
-        </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -54,10 +52,7 @@ function ImageCarrousel({ handleCategory}) {
           src={asttroImgSrc}
           alt="Second slide"
         />
-        <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -66,12 +61,7 @@ function ImageCarrousel({ handleCategory}) {
           
           alt="Third slide"
         />
-        <Carousel.Caption>
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
     </Carousel>
         </div>

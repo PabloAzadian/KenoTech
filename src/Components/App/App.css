@@ -1,3 +1,11 @@
 .container {
     font-family: NotoSansDisplay, NotoSansDisplay-fallback, Arial, sans-serif;
 }
+
+body {
+    scrollbar-width: 0px;
+  }
+
+  body::-webkit-scrollbar {
+    display: none; 
+  }

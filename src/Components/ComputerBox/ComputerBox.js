@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import DesktopPC from "../../media/Objects/DesktopPC.png"
 import Laptop from "../../media/Objects/Laptop.png"
-import "./ComputerBox.css"
+
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
 import BasketCart from "../../media/icons/basket-cart-icon-27.png"
@@ -15,6 +15,22 @@ function ComputerBox(props) {
     const [selectedRam, setSelectedRam] = useState(props.item.rams[0])
     const [selectedStorage, setSelectedStorage] = useState(props.item.storages[0])
     const [activeModal, setActiveModal] = useState(false)
+    const [width, setWidth] = useState(0)
+    const elementRef = useRef(null);
+
+    useEffect(() => {
+        props.setScrollOffset(elementRef.current.offsetWidth);
+
+        const handleResize = () => {
+            props.setScrollOffset(elementRef.current.offsetWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleOpenModal = () => {
         setActiveModal(true);
@@ -27,12 +43,12 @@ function ComputerBox(props) {
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount + selectedRam.priceDifference + selectedStorage.priceDifference)
   return (
-    <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
+    <div ref={elementRef} className='col-lg-4 col-md-4 col-sm-6 col-12 p-3 card-container'>
     
         <Card onClick={handleOpenModal} >
         <Card.Img variant="top" src={props.item.imgSrc} />
         <Card.Body>
-            <Card.Title >{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
+            <Card.Title >{props.item.name} <div className='badges'>{props.item.discount? discountBadge(props.item.discount): ""} {props.item.new? <h6 className='new-badge'>NEW</h6> : "" }</div> </Card.Title>
             <Card.Text >
                 <div className='ratings'>
                     <p>{props.item.rating}/5 <img src={star} height={"30px"} width={"20px"}/> <span class="bi bi-star"></span>({props.item.reviews} reviews)</p>
@@ -51,7 +67,7 @@ function ComputerBox(props) {
         </Card>
 
         
-         <Modal show={activeModal} onHide={handleCloseModal}>
+         <Modal show={activeModal} onHide={handleCloseModal} ClassName="modal-90w">
             <Modal.Header closeButton>
                     <Modal.Title>{props.item.name}</Modal.Title>
             </Modal.Header>

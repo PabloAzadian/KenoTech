@@ -17,7 +17,7 @@ function Categories({ handleCategory}) {
               <div className='row categories-container  gap-2'>
                 <button  className='col-7 col-md-4 col-lg-2 m-auto button-computer'>
                   <img src={Computer} alt="Computer" />
-                  <h2>Desktop Computers</h2>
+                  <h2>Desktop Pc's</h2>
                 </button>
                 <button  className='col-7 col-md-4 col-lg-2 m-auto button-laptop'>
                   <img src={Laptop} alt="Laptop" />

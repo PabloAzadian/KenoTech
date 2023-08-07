@@ -7,7 +7,9 @@ return (
     <>
         <ImageCarrousel/>
         <Categories/>
-        <ItemDisplayer type="discounted"/>
+        
+        <ItemDisplayer type="discounted" inline={true} title="This Month's Sales"/>
+        <Categories/>
     </>
   )  
 }

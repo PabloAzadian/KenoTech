@@ -1,0 +1,48 @@
+.side-cart-item .card{ 
+    max-width: 100%;
+    cursor:default;
+}
+
+
+
+.side-cart-item .card img {
+    height: 150px;
+    width: 150px;
+}
+.side-cart-item .card-title{
+    font-weight: 800;
+}
+
+.card-title button{
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    position:absolute;
+    top: 0;
+    right: 2%;
+}
+
+.card-body {
+    color:var(--main-color);
+    font-weight: 600;
+}
+
+.prices{
+    font-size: 15px;
+}
+
+.prices button {
+    
+    border: none;
+    background-color: var(--main-color);
+    color: var(--light-gray);
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+}
+
+.prices button:disabled {
+    
+   background-color: var(--light-gray);
+   color: var(--dark-gray);
+}

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import "./MonitorBox.css"
+import React, { useState, useEffect, useRef } from 'react'
+
 import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
 import BasketCart from "../../media/icons/basket-cart-icon-27.png"
@@ -26,6 +26,21 @@ const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h
 function MonitorBox(props) {
     const [selectedColor, setSelectedColor] = useState(props.item.colors[0])
     const [activeModal, setActiveModal] = useState(false)
+    const elementRef = useRef(null);
+
+    useEffect(() => {
+        props.setScrollOffset(elementRef.current.offsetWidth);
+
+        const handleResize = () => {
+            props.setScrollOffset(elementRef.current.offsetWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleOpenModal = () => {
         setActiveModal(true);
@@ -39,19 +54,19 @@ function MonitorBox(props) {
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount)
   return (
-    <div className='col-lg-4 col-md-5 col-sm-7 col-7 p-3 card-container'>
+    <div ref={elementRef} className='col-lg-4 col-md-4 col-sm-6 col-12 p-3 card-container'>
 
-<Card onClick={handleOpenModal} >
+<Card  onClick={handleOpenModal} >
         <Card.Img variant="top" src={props.item.imgSrc} />
         <Card.Body>
-            <Card.Title >{props.item.name} {props.item.discount? discountBadge(props.item.discount): ""} </Card.Title>
+            <Card.Title >{props.item.name} <div className='badges'>{props.item.discount? discountBadge(props.item.discount): ""} {props.item.new? <h6 className='new-badge'>NEW</h6> : "" }</div> </Card.Title>
             <Card.Text >
                 <div className='ratings'>
                     <p>{props.item.rating}/5 <img src={star} height={"30px"} width={"20px"}/> <span class="bi bi-star"></span>({props.item.reviews} reviews)</p>
                 </div>
-                <div className='prices'>
+                <div className='prices gap-2'>
             {props.item.discount? 
-                (<div className='gap-2'> <span>{props.item.price}$</span><h3>{props.item.discountedPrice}$</h3> </div>)
+                (<div className=''> <span>{props.item.price}$</span><h3>{props.item.discountedPrice}$</h3> </div>)
                 :
                 <div>
                 
