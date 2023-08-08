@@ -48,7 +48,7 @@ function NavBar(props) {
           <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
             <Nav className='gap-4'>
             <Nav.Link  className="m-auto p-2" href="/">Home</Nav.Link>
-            <NavDropdown className="m-auto p-2" title="Categories" id="basic-nav-dropdown">
+            {/* <NavDropdown className="m-auto p-2" title="Categories" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Desktop Computers</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Notebooks</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Consoles</NavDropdown.Item>
@@ -59,7 +59,8 @@ function NavBar(props) {
               <NavDropdown.Item href="/all-categories">
                 All Categories
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
+            <Nav.Link  href="/all-categories" className="m-auto p-2">Categories</Nav.Link>
             <Nav.Link  href="/BuildYourOwnPc" className="m-auto p-2">Build your PC</Nav.Link>
             <Nav.Link  href="/AboutUs" className="m-auto p-2">About Us</Nav.Link>
             <Nav.Link  href="/Contact" className="m-auto p-2">Contact</Nav.Link>
