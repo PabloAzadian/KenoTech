@@ -5,6 +5,7 @@ import Console from "../../media/categories/Console.png"
 import Monitor from "../../media/categories/Monitor.png"
 import Headset from "../../media/categories/Headset.png"
 import "./Categories.css"
+import { Link } from 'react-router-dom'
 
 function Categories({ handleCategory}) {
 
@@ -15,25 +16,39 @@ function Categories({ handleCategory}) {
    <section>
             <div className='container'>
               <div className='row categories-container  gap-2'>
+                
                 <button  className='col-7 col-md-4 col-lg-2 m-auto button-computer'>
+                <Link to="/Desktops">
                   <img src={Computer} alt="Computer" />
                   <h2>Desktop Pc's</h2>
+                 </Link>
+
                 </button>
-                <button  className='col-7 col-md-4 col-lg-2 m-auto button-laptop'>
+                <button  href="/Notebooks" className='col-7 col-md-4 col-lg-2 m-auto button-laptop'>
+                <Link to="/Notebooks">
                   <img src={Laptop} alt="Laptop" />
                   <h2>Notebooks</h2>
+                  </Link>
                 </button>
+                
                 <button className='col-7 col-md-4 col-lg-2 m-auto button-console'>
+                <Link to="/Consoles">
                   <img  src={Console} alt="Console" />
                   <h2>Consoles</h2>
+                </Link>
                 </button>
+                
                 <button  className='col-7 col-md-4 col-lg-2 m-auto button-monitor'>
+                <Link to="/Monitors">
                   <img  src={Monitor} alt="Monitor" />
                   <h2>Monitors</h2>
+                </Link>
                 </button>
                 <button className='col-7 col-md-4 col-lg-2 m-auto button-headset'>
+                <Link to="/Headsets">
                   <img src={Headset} alt="Headset" />
                   <h2>Headsets</h2>
+                </Link>
                 </button>
           
                 

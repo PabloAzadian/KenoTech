@@ -8,6 +8,7 @@ import BasketCart from "../../media/icons/basket-cart-icon-27.png"
 import KenoTech from "../../media/icons/Logo.png"
 import "./NavBar.css"
 import SideCartItem from '../SideCartItem/SideCartItem';
+import { Link } from 'react-router-dom';
 
 function NavBar(props) {
   const [show, setShow] = useState(false);
@@ -33,7 +34,7 @@ function NavBar(props) {
     <Navbar id="NavBar" className="justify-content-space-between" collapseOnSelect expand="lg" bg="primary" data-bs-theme="light">
         <Container>
           
-          <Navbar.Brand variant="primary" href="#home" id="brand">
+          <Navbar.Brand variant="primary" href="/" id="brand">
               <img
                 alt=""
                 src={KenoTech}
@@ -46,20 +47,20 @@ function NavBar(props) {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
             <Nav className='gap-4'>
-            <Nav.Link  className="m-auto p-2">Home</Nav.Link>
+            <Nav.Link  className="m-auto p-2" href="/">Home</Nav.Link>
             <NavDropdown className="m-auto p-2" title="Categories" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Daesktop Computers</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Desktop Computers</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Notebooks</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Consoles</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Monitors</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Headsets</NavDropdown.Item>
               
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="/all-categories">
                 All Categories
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link  className="m-auto p-2">Build your PC</Nav.Link>
+            <Nav.Link  href="/BuildYourOwnPc" className="m-auto p-2">Build your PC</Nav.Link>
             <Nav.Link  className="m-auto p-2">About Us</Nav.Link>
             <Nav.Link  className="m-auto p-2">Contact</Nav.Link>
             <Nav.Link  className="cart-img m-auto p-2"><img
@@ -94,9 +95,12 @@ function NavBar(props) {
         </Modal.Body>
         <Modal.Footer className='d-flex justify-content-between'>
             <h5>Total Price: {calculateTotalPrice()}$</h5>
-            <button>
+            {props.shoppingCart.length>0 && 
+              <Link to="/Checkout">
+              <button onClick={() => setShow(false)}>
                 Go to Checkout
-            </button>
+              </button>
+              </Link>}
         </Modal.Footer>
       </Modal>
       </div>

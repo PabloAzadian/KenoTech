@@ -62,6 +62,36 @@ function ItemDisplayer(props) {
             )
           )}
 
+          {props.type === "Desktops" && ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category==="Desktop Computer"? renderComponent(item) : null
+            )
+          )
+          }
+          {props.type === "Notebooks" && ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category==="Laptop and Notebook"? renderComponent(item) : null
+            )
+          )
+          }
+          {props.type === "Consoles" && ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category==="Console"? renderComponent(item) : null
+            )
+          )
+          }
+          {props.type === "Monitors" && ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category==="Monitor"?renderComponent(item) : null
+            )
+          )
+          }
+          {props.type === "Headsets" && ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category==="Headset"? renderComponent(item) : null
+            )
+          )
+          }
           {props.type === "new" && ItemData.map((category, index) =>
             category.map((item, index) =>
               item.new? renderComponent(item) : null
@@ -69,10 +99,10 @@ function ItemDisplayer(props) {
           )
           }
           </div>
-          <div className="scroll-buttons">
+          {props.inline && <div className="scroll-buttons">
             <button className="left" onClick={handleScrollLeft}>←</button>
             <button className="right" onClick={handleScrollRight}>→</button>
-          </div>
+          </div>}
         </div>
         {/* <div className="scroll-buttons">
           <button className="left" onClick={handleScrollLeft}>{"<"}</button>

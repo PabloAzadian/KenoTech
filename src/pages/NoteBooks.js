@@ -2,9 +2,10 @@ import React from 'react'
 import ComputerBox from '../Components/ComputerBox/ComputerBox'
 import '../Components/ItemDisplayer/ItemDisplayer.css'
 import { ItemData } from "../Components/ItemData"
+import ItemDisplayer from '../Components/ItemDisplayer/ItemDisplayer'
 
 
-function Notebooks() { 
+function Notebooks({setShoppingCart}) { 
     
      
  
@@ -16,12 +17,7 @@ function Notebooks() {
      <div className='container'>
         <h1>Notebooks</h1>
          
-         <div className='group-container'>
-           <div className='card-group row'>    
-            {ItemData[1].map((item, index) => <ComputerBox key={index} item={item}/>)}
-             
-           </div>
-         </div>
+        <ItemDisplayer type="Notebooks" setShoppingCart={setShoppingCart} />
      </div>
    )
  }

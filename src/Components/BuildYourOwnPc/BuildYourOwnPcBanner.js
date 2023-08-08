@@ -2,6 +2,7 @@ import React from 'react'
 import buildPc from "../../media/BuildYourOwn.jpg"
 import "./BuildYourOwnPc.css"
 import logo from "../../media/icons/Logo.png"
+import { Link } from 'react-router-dom'
 
 function BuildYourOwnPcBanner() {
   return (
@@ -18,7 +19,7 @@ function BuildYourOwnPcBanner() {
                 custom PC just for you. Whether you're a gamer, content creator, or professional, we've got you covered. Our experts at <span>KenoTech</span> will help you choose
                 the best components to optimize performance, aesthetics, and budget. 
                 Start building your dream PC today!</h5>
-                <button>Get Started </button>
+                <Link to="/BuildYourOwnPc"><button>Get Started </button></Link>
                 <div className="logo-container">
                     <img width="200px" src={logo} alt="KenoTech Logo" />
                 </div>

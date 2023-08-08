@@ -12,10 +12,13 @@ import Headsets from "../../pages/Headsets"
 import AllCategrories from '../../pages/AllCategories';
 import Home from "../../pages/Home"
 import { ItemData } from "../ItemData"
+import { Route, Routes } from 'react-router-dom';
+import BuildYourOwnPc from '../../pages/BuildYourOwnPc';
+import CheckOut from "../../pages/CheckOut"
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(0)
-  const [shoppingCart, setShoppingCart] = useState([ItemData[0][0],ItemData[1][3],ItemData[2][2],ItemData[1][1],ItemData[2][2],ItemData[0][0],ItemData[1][1],ItemData[2][2]])
+  const [shoppingCart, setShoppingCart] = useState([])
 
   const categoryHandler = (category) => {
     setSelectedCategory(category);
@@ -23,11 +26,21 @@ function App() {
   return (
     <div>
        <NavBar setShoppingCart={setShoppingCart} shoppingCart={shoppingCart}/>
-      {/*<Categories handleCategory={categoryHandler}/>
-      <ItemDisplayer />   */}
-      {/* <AllCategrories/> */}
-      <Home setShoppingCart={setShoppingCart}/>
-      {/* <Headsets/> */}
+       <Routes>
+        <Route path="/" element={<Home setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/all-categories" element={<AllCategrories setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/Desktops" element={<Computers setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/Notebooks" element={<Notebooks setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/Consoles" element={<Consoles setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/Monitors" element={<Monitors setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/Headsets" element={<Headsets setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/BuildYourOwnPc" element={<BuildYourOwnPc/>}/>
+        <Route path="/Checkout" element={<CheckOut/>}/>
+      
+      
+      
+      
+      </Routes>
     </div>
     );
 }
