@@ -15,6 +15,8 @@ import { ItemData } from "../ItemData"
 import { Route, Routes } from 'react-router-dom';
 import BuildYourOwnPc from '../../pages/BuildYourOwnPc';
 import CheckOut from "../../pages/CheckOut"
+import AboutUs from '../../pages/AboutUs';
+import Contact from '../../pages/Contact';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(0)
@@ -36,6 +38,8 @@ function App() {
         <Route path="/Headsets" element={<Headsets setShoppingCart={setShoppingCart}/>}/>
         <Route path="/BuildYourOwnPc" element={<BuildYourOwnPc/>}/>
         <Route path="/Checkout" element={<CheckOut/>}/>
+        <Route path="/AboutUs" element={<AboutUs/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
       
       
       

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function BuildYourOwnPc() {
+function CheckOut() {
   return (
     <h1>CheckOut</h1>
   )
 }
 
-export default BuildYourOwnPc
+export default CheckOut
