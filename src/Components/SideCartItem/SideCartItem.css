@@ -49,6 +49,9 @@
     max-height: 15px;
     margin: 0;
     margin-top: 2px !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .card-body {
     color:var(--main-color);
