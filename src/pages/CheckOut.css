@@ -1,0 +1,61 @@
+.checkout-footer{
+    background-color: var(--main-color);
+    color: var(--light-gray);
+    padding: 1rem;
+    font-weight: 600;
+}
+
+
+
+.checkout-footer h5 {
+    
+    padding: 2rem;
+}
+.checkout-title{
+    border-bottom: 2px solid var(--main-color);
+}
+.items-container {
+    min-height: 50vh;
+    max-height: 65vh;
+}
+
+.payment-options{
+    font-weight: 600;
+    margin:2rem;
+    border-bottom: 1px solid var(--main-color);
+    text-align: center;
+    
+}
+
+.payment-modal .modal-header{
+    background-color: var(--main-color);
+    background-image: none;
+    color: var(--light-gray);
+    text-align: center;
+}
+
+
+.payment-modal .modal-body{
+    min-height: 40vh;
+}
+
+.succesful-payment{
+    text-align: center;
+    padding: 3rem;
+}
+.succesful-payment  h4{
+    color: var(--accent-color-1);
+   
+}
+
+.succesful-payment button{
+    background-color: var(--main-color);
+    padding: 0.5rem 1rem;
+    margin: 1rem;    
+}
+
+.succesful-payment a{
+    color: var(--light-gray);
+    font-weight: 600;
+
+}

@@ -3,7 +3,10 @@
     cursor:default;
 }
 
-
+.side-cart-item .card:hover{ 
+    
+    transform: scale(1.0);
+}
 
 .side-cart-item .card img {
     height: 150px;

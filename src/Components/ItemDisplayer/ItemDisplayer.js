@@ -32,15 +32,15 @@ function ItemDisplayer(props) {
    const renderComponent = (item, index) => {
     switch (item.category) {
       case 'Desktop Computer':
-        return <ComputerBox key={index} setShoppingCart={props.setShoppingCart} setScrollOffset={setScrollOffset} item={item}/>
+        return <ComputerBox key={index}  setScrollOffset={setScrollOffset} item={item}/>
       case 'Laptop and Notebook':
-        return <ComputerBox key={index} setShoppingCart={props.setShoppingCart} setScrollOffset={setScrollOffset} item={item}/>
+        return <ComputerBox key={index}  setScrollOffset={setScrollOffset} item={item}/>
       case 'Console':
-        return <ConsoleBox key={index} setShoppingCart={props.setShoppingCart} setScrollOffset={setScrollOffset} item={item}/>
+        return <ConsoleBox key={index}  setScrollOffset={setScrollOffset} item={item}/>
       case 'Headset':
-        return <HeadsetBox key={index} setShoppingCart={props.setShoppingCart} setScrollOffset={setScrollOffset} item={item}/>;
+        return <HeadsetBox key={index}  setScrollOffset={setScrollOffset} item={item}/>;
       case 'Monitor':
-        return <MonitorBox key={index} setShoppingCart={props.setShoppingCart} setScrollOffset={setScrollOffset} item={item}/>;
+        return <MonitorBox key={index}  setScrollOffset={setScrollOffset} item={item}/>;
       default:
         return null; 
     }

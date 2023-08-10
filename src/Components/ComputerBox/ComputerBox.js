@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
 import BasketCart from "../../media/icons/basket-cart-icon-27.png"
 import star from "../../media/icons/star icon.png"
+import { useShoppingCart } from '../../Components/ShoppingCartContext';
 
 
 const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h6>)
@@ -17,6 +18,7 @@ function ComputerBox(props) {
     const [activeModal, setActiveModal] = useState(false)
     const [width, setWidth] = useState(0)
     const elementRef = useRef(null);
+    const { shoppingCart, setShoppingCart } = useShoppingCart();
 
     useEffect(() => {
         props.setScrollOffset(elementRef.current.offsetWidth);
@@ -31,7 +33,15 @@ function ComputerBox(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    
 
+    const handleAddToCart = (item) => {
+        setShoppingCart((prevCart) => [...prevCart, props.item]);
+        setActiveModal(false)
+        alert(`Succesfully added ${props.item.name} to the Cart!`)
+      };
+
+    
     const handleOpenModal = () => {
         setActiveModal(true);
     }
@@ -40,11 +50,11 @@ function ComputerBox(props) {
         setActiveModal(false);
     }
 
-    const handleAddToCart = () => {
-        props.setShoppingCart(prevCart => [...prevCart, props.item])
-        setActiveModal(false)
-        alert(`Succesfully added ${props.item.name} to the Cart!`)
-    }
+    // const handleAddToCart = () => {
+    //     props.setShoppingCart(prevCart => [...prevCart, props.item])
+    //     setActiveModal(false)
+    //     alert(`Succesfully added ${props.item.name} to the Cart!`)
+    // }
 
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount + selectedRam.priceDifference + selectedStorage.priceDifference)

@@ -9,24 +9,28 @@ import KenoTech from "../../media/icons/Logo.png"
 import "./NavBar.css"
 import SideCartItem from '../SideCartItem/SideCartItem';
 import { Link } from 'react-router-dom';
+import { useShoppingCart } from '../../Components/ShoppingCartContext';
+
 
 function NavBar(props) {
   const [show, setShow] = useState(false);
+  const {shoppingCart, setShoppingCart } = useShoppingCart();
   
 
   const removeItem = (index) => {
-    const updatedCart = [...props.shoppingCart];
+    const updatedCart = [...shoppingCart];
     updatedCart.splice(index, 1);
-    props.setShoppingCart(updatedCart);
+    setShoppingCart(updatedCart);
   };
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
-    for (const item of props.shoppingCart) {
+    for (const item of shoppingCart) {
       totalPrice += item.price;
     }
     return totalPrice;
   };
+
 
   return (
     <div>
@@ -34,20 +38,22 @@ function NavBar(props) {
     <Navbar id="NavBar" className="justify-content-space-between" collapseOnSelect expand="lg" bg="primary" data-bs-theme="light">
         <Container>
           
-          <Navbar.Brand variant="primary" href="/" id="brand">
+          <Navbar.Brand variant="primary" id="brand">
+          <Link to="/">
               <img
                 alt=""
                 src={KenoTech}
                 width="160"
                 height="60"
               />{' '}
+              </Link>
               {/* <h2>Keno<span>Tech</span></h2> */}
               </Navbar.Brand>
           
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
             <Nav className='gap-4'>
-            <Nav.Link  className="m-auto p-2" href="/">Home</Nav.Link>
+            <Nav.Link  className="m-auto p-2"><Link to="/">Home</Link></Nav.Link>
             {/* <NavDropdown className="m-auto p-2" title="Categories" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Desktop Computers</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Notebooks</NavDropdown.Item>
@@ -60,18 +66,18 @@ function NavBar(props) {
                 All Categories
               </NavDropdown.Item>
             </NavDropdown> */}
-            <Nav.Link  href="/all-categories" className="m-auto p-2">Categories</Nav.Link>
-            <Nav.Link  href="/BuildYourOwnPc" className="m-auto p-2">Build your PC</Nav.Link>
-            <Nav.Link  href="/AboutUs" className="m-auto p-2">About Us</Nav.Link>
-            <Nav.Link  href="/Contact" className="m-auto p-2">Contact</Nav.Link>
-            <Nav.Link  className="cart-img m-auto p-2"><img
+            <Nav.Link className="m-auto p-2"><Link to="/all-categories">Categories</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/BuildYourOwnPc">Build Your PC</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/AboutUs">About Us</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/Contact">Contact</Link></Nav.Link>
+            <Nav.Link className="cart-img m-auto p-2"><img
             
                 onClick={() => setShow(true)}
                 alt=""
                 src={BasketCart}
                 width="40"
                 height="40"/>
-                {props.shoppingCart.length>0 && <button onClick={() => setShow(true)} className='cart-item-quantity'>{props.shoppingCart.length}</button>}
+                {shoppingCart.length>0 && <button onClick={() => setShow(true)} className='cart-item-quantity'>{shoppingCart.length}</button>}
              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -87,7 +93,7 @@ function NavBar(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='overflow-scroll'>
-        {props.shoppingCart.length >0 ? props.shoppingCart.map((item, index) => <SideCartItem removeItem={removeItem} item={item} index={index}/>)
+        {shoppingCart.length >0 ? shoppingCart.map((item, index) => <SideCartItem removeItem={removeItem} item={item} index={index}/>)
         :
         <div className='empty-cart'>
           <h3>Looks like your Cart is empty {":("}</h3>
@@ -96,7 +102,7 @@ function NavBar(props) {
         </Modal.Body>
         <Modal.Footer className='d-flex justify-content-between'>
             <h5>Total Price: {calculateTotalPrice()}$</h5>
-            {props.shoppingCart.length>0 && 
+            {shoppingCart.length>0 && 
               <Link to="/Checkout">
               <button onClick={() => setShow(false)}>
                 Go to Checkout

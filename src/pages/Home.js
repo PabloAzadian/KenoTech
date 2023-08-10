@@ -3,15 +3,15 @@ import ImageCarrousel from "../Components/ImageCarrousel/ImageCarrousel";
 import ItemDisplayer from "../Components/ItemDisplayer/ItemDisplayer";
 import BuildYourOwnPcBanner from "../Components/BuildYourOwnPc/BuildYourOwnPcBanner";
 
-function Home({setShoppingCart}) {
+function Home() {
 return (
     <>
         <ImageCarrousel/>
         <Categories/>
         
-        <ItemDisplayer type="discounted" setShoppingCart={setShoppingCart} inline={true} title="Monthly Sales"/>
+        <ItemDisplayer type="discounted" inline={true} title="Monthly Sales"/>
         <BuildYourOwnPcBanner/>
-        <ItemDisplayer type="new" setShoppingCart={setShoppingCart} inline={true} title="Our New Items"/>
+        <ItemDisplayer type="new"  inline={true} title="Our New Items"/>
     </>
   )  
 }

@@ -17,25 +17,25 @@ import BuildYourOwnPc from '../../pages/BuildYourOwnPc';
 import CheckOut from "../../pages/CheckOut"
 import AboutUs from '../../pages/AboutUs';
 import Contact from '../../pages/Contact';
+import { ShoppingCartProvider } from '../../Components/ShoppingCartContext';
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState(0)
+  
   const [shoppingCart, setShoppingCart] = useState([])
 
-  const categoryHandler = (category) => {
-    setSelectedCategory(category);
-  }
+
   return (
     <div>
-       <NavBar setShoppingCart={setShoppingCart} shoppingCart={shoppingCart}/>
+      <ShoppingCartProvider>
+       <NavBar/>
        <Routes>
-        <Route path="/" element={<Home setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/all-categories" element={<AllCategrories setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/Desktops" element={<Computers setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/Notebooks" element={<Notebooks setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/Consoles" element={<Consoles setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/Monitors" element={<Monitors setShoppingCart={setShoppingCart}/>}/>
-        <Route path="/Headsets" element={<Headsets setShoppingCart={setShoppingCart}/>}/>
+        <Route path="/" element={<Home />}/>
+        <Route path="/all-categories" element={<AllCategrories />}/>
+        <Route path="/Desktops" element={<Computers />}/>
+        <Route path="/Notebooks" element={<Notebooks />}/>
+        <Route path="/Consoles" element={<Consoles />}/>
+        <Route path="/Monitors" element={<Monitors />}/>
+        <Route path="/Headsets" element={<Headsets />}/>
         <Route path="/BuildYourOwnPc" element={<BuildYourOwnPc/>}/>
         <Route path="/Checkout" element={<CheckOut/>}/>
         <Route path="/AboutUs" element={<AboutUs/>}/>
@@ -45,6 +45,7 @@ function App() {
       
       
       </Routes>
+      </ShoppingCartProvider>
     </div>
     );
 }

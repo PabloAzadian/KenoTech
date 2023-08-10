@@ -6,6 +6,7 @@ import Astro from "../../media/Banners/Banner Astro.png"
 import AstroSmall from "../../media/Banners/Banner Astro small.png"
 import Corsair from "../../media/Banners/CorsairBanner.jpg"
 import CorsairSmall from "../../media/Banners/CorsairBannerSmall.jpg"
+import "./ImageCarrousel.css"
 
 
 function ImageCarrousel({ handleCategory}) {
