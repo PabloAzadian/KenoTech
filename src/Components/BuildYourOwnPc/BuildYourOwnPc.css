@@ -30,9 +30,8 @@
 
 .banner-text h5 {
     padding-top: 2rem;
-    
     font-size: 25px;
-    text-align: justify;
+    text-align:justify;
 }
 .banner-text button{
     margin: 2rem;
