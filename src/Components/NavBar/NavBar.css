@@ -85,7 +85,7 @@
 }
 
 .sidebar-modal .modal-body {
-    max-height: 65vh;
+    height: 65vh;
     overflow: scroll;
 }
 
