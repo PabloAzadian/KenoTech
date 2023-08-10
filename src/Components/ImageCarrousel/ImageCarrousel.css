@@ -1,0 +1,9 @@
+
+
+.carousel-indicators , .carousel-control-prev, .carousel-control-next {
+    display: none;
+}
+
+.carousel:hover .carousel-control-next, .carousel:hover .carousel-control-prev,  .carousel:hover .carousel-indicators{
+    display: flex;
+}
