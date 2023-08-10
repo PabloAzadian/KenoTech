@@ -84,7 +84,6 @@
 .badges{
     display: flex;
     gap: 8px;
-    font-weight: 600;
     color: var(--light-gray);
     position: absolute;
     top: 8px;
@@ -95,12 +94,14 @@
     background-color: var(--secondary-color);
     padding: 7px;
     border-radius: 5px;
+    font-weight: 600;
 }
 
 .badges .new-badge{
     background-color: var(--accent-color-1);
     padding: 7px;
     border-radius: 5px;
+    font-weight: 600;
 }
 
 
