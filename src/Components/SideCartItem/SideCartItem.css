@@ -20,6 +20,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 800;
+    margin: 0;
 }
 .card-title button{
     border: none;
@@ -30,6 +31,7 @@
     right: 2%;
     height: 50px;
     width: 50px;
+    margin: none !important;
 }
 
 .card-title button:hover{
@@ -38,7 +40,16 @@
     color: var(--light-gray);
     
 }
+.sidecart-item-modifiers{
+    font-size: small;
+    max-height: 60px;
+}
 
+.sidecart-item-modifiers p {
+    max-height: 15px;
+    margin: 0;
+    margin-top: 2px !important;
+}
 .card-body {
     color:var(--main-color);
     font-weight: 600;

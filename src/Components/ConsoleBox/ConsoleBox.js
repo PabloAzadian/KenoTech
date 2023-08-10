@@ -51,8 +51,15 @@ function ConsoleBox(props) {
         setActiveModal(false);
     }
 
+    const updatedItem = {
+        name: props.item.name,
+        imgSrc: props.item.imgSrc,
+        color: selectedColor,
+        price: props.item.finalPrice,
+    }
+
     const handleAddToCart = (item) => {
-        setShoppingCart((prevCart) => [...prevCart, props.item]);
+        setShoppingCart((prevCart) => [...prevCart, updatedItem]);
         setActiveModal(false)
         alert(`Succesfully added ${props.item.name} to the Cart!`)
       };
@@ -60,6 +67,7 @@ function ConsoleBox(props) {
   
     props.item.discountedPrice= (props.item.price-props.item.discount) 
     props.item.finalPrice = (props.item.price - props.item.discount)
+    
   return (
     <div ref={elementRef} className='col-lg-4 col-md-4 col-sm-6 col-12 p-3 card-container'>
 

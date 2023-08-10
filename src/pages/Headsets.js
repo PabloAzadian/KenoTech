@@ -1,10 +1,10 @@
 import React from 'react'
-import HeadsetBox from '../Components/HeadsetBox/HeadsetBox'
 import '../Components/ItemDisplayer/ItemDisplayer.css'
-import { ItemData } from "../Components/ItemData"
 import ItemDisplayer from '../Components/ItemDisplayer/ItemDisplayer'
+import { Link } from 'react-router-dom'
+import "./CategoryPage.css"
 
-function Headsets({setShoppingCart}) { 
+function Headsets() { 
     
      
  
@@ -14,9 +14,12 @@ function Headsets({setShoppingCart}) {
      
    return (
      <div className='container'>
+      <div className='category-header'>
+        <Link to="/all-categories"><button>←</button></Link>
         <h1>Headsets</h1>
+      </div>
          
-        <ItemDisplayer type="Headsets" setShoppingCart={setShoppingCart} />
+        <ItemDisplayer type="Headsets"  />
      </div>
    )
  }

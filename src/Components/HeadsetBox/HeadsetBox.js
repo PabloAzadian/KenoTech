@@ -53,8 +53,15 @@ function HeadsetBox(props) {
         setActiveModal(false);
     }
 
+    const updatedItem = {
+        name: props.item.name,
+        imgSrc: props.item.imgSrc,
+        color: selectedColor,
+        price: props.item.finalPrice,
+    }
+
     const handleAddToCart = (item) => {
-        setShoppingCart((prevCart) => [...prevCart, props.item]);
+        setShoppingCart((prevCart) => [...prevCart, updatedItem]);
         setActiveModal(false)
         alert(`Succesfully added ${props.item.name} to the Cart!`)
       };

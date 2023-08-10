@@ -1,0 +1,18 @@
+.category-header{
+    display: flex;
+    flex-direction: row;
+    margin:2rem;
+    align-items: center;
+}
+
+
+
+.category-header button{
+    padding: 1rem 1.5rem;
+    background-color: var(--main-color);
+    color: var(--light-gray);
+    border: none;
+    opacity: 1;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    
+}

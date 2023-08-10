@@ -95,7 +95,7 @@ function CheckOut() {
             
             
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">Pleas provide a first name</Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="6" controlId="validationCustom02">
           <Form.Label>Last name</Form.Label>
@@ -104,7 +104,7 @@ function CheckOut() {
             type="text"
             placeholder="Last name"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">Please provide a last name</Form.Control.Feedback>
         </Form.Group>
         <Row className="mb-3 mt-3">
         <Form.Group as={Col} md="12" controlId="validationCustomUsername">
@@ -137,7 +137,7 @@ function CheckOut() {
           <Form.Label>Zip</Form.Label>
           <Form.Control type="number" placeholder="Zip" required />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid zip code.
+            Please provide a valid Zip code.
           </Form.Control.Feedback>
         </Form.Group>
         </Row>
@@ -191,7 +191,7 @@ function CheckOut() {
             type="card"
             placeholder="1234 5678 9012 3456"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          
         </Form.Group>
          </Row>
         <Row className="mb-3">
@@ -203,11 +203,11 @@ function CheckOut() {
             placeholder="John Doe"
             
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          
         </Form.Group>
         </Row>
         <Row>
-        <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+        <Form.Group as={Col} md="8" controlId="validationCustomUsername">
           <Form.Label>Expiration Date</Form.Label>
           <InputGroup hasValidation>
             
@@ -223,8 +223,9 @@ function CheckOut() {
             <InputGroup.Text id="inputGroupPrepend">/</InputGroup.Text>
             <Form.Control
               type="number"
-              placeholder="2024"
+              // placeholder="2024"
               aria-describedby="inputGroupPrepend"
+              defaultValue="2023"
               required
               
             />
@@ -234,7 +235,7 @@ function CheckOut() {
           </InputGroup>
         </Form.Group>
       
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
+        <Form.Group as={Col} md="4" controlId="validationCustom03">
           <Form.Label>CVC</Form.Label>
           <Form.Control type="number" placeholder="253" required  />
           <Form.Control.Feedback type="invalid">

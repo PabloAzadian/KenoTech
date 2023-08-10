@@ -33,10 +33,19 @@ function ComputerBox(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const updatedItem = {
+        name: props.item.name,
+        imgSrc: props.item.imgSrc,
+        color: selectedColor,
+        ram: selectedRam!==props.item.rams[0]? selectedRam : null,
+        storage: selectedStorage!==props.item.storages[0]? selectedStorage: null,
+        price: props.item.finalPrice,
+    }
     
 
     const handleAddToCart = (item) => {
-        setShoppingCart((prevCart) => [...prevCart, props.item]);
+        setShoppingCart((prevCart) => [...prevCart, updatedItem]);
         setActiveModal(false)
         alert(`Succesfully added ${props.item.name} to the Cart!`)
       };

@@ -22,8 +22,10 @@ function SideCartItem(props) {
         <Card.Body>
             <Card.Title >{props.item.name}  <button className='remove-item' onClick={() => props.removeItem(props.index)}>x</button></Card.Title>
             <Card.Text className="d-flex flex-column justify-content-around h-100">
-                <div>
-                    <p>Color: {props.item.colors[0]}</p>
+                <div className='sidecart-item-modifiers'>
+                    <p>Color: {props.item.color}</p>
+                    <p>{props.item.ram? `Modified Ram: ${props.item.ram.name} (+${props.item.ram.priceDifference}$) `: null}</p>
+                    <p>{props.item.storage? `Modified Storage: ${props.item.storage.name} (+${props.item.storage.priceDifference}$) `: null}</p>
                 </div>
                 <div className='prices gap-2 d-flex'>
                     {/* <button onClick={handleAdd} disabled={quantity >= 5}>+</button>
