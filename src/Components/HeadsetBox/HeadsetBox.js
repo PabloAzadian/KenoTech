@@ -148,14 +148,14 @@ function HeadsetBox(props) {
         
                 </Container>
             </Modal.Body>
-            <Modal.Footer className='d-flex justify-content-between'>
-            <h5>Final Price: {props.item.finalPrice}$</h5>
-                            <button onClick={handleAddToCart} className='d-flex gap-3 align-center'>
-                                <p className='m-auto'>Add to Cart</p>
+            <Modal.Footer className='row d-flex flex-row justify-content-between'>
+                            <h5 className='col-7'>Final Price: {props.item.finalPrice}$</h5>
+                            <button onClick={handleAddToCart} className='col-4 d-flex gap-2 align-center'>
+                                <p className='m-auto'>Add to</p>
                                 <img width="40px" src={BasketCart}/>
 
                             </button>
-            </Modal.Footer>
+                    </Modal.Footer>
             </Modal>
             </div>
 </div>

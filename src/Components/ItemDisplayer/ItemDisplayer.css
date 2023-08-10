@@ -193,6 +193,8 @@
 
 .modal-body {
     background-color: var(--light-gray) !important;
+    max-height: 60vh;
+    overflow: scroll;
     
     
 }
@@ -227,6 +229,8 @@
 
 .modal-footer{
     background-color: var(--main-color);
+    max-width: 100%;
+    margin: auto;
     
 }
 .modal-footer h5{

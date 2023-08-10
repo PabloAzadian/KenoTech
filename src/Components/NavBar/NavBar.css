@@ -77,11 +77,16 @@
 .sidebar-modal {
     width: 100%; /* Adjust the width as needed */
     margin: auto;
-    height: 100vh; /* Full height of viewport */
+    max-height: 100vh; /* Full height of viewport */
     display: flex;
     position: fixed;
     right: 0;
     top: 0;
+}
+
+.sidebar-modal .modal-body {
+    max-height: 65vh;
+    overflow: scroll;
 }
 
 .sidebar-modal .modal-content{
