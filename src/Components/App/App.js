@@ -17,6 +17,7 @@ import BuildYourOwnPc from '../../pages/BuildYourOwnPc';
 import CheckOut from "../../pages/CheckOut"
 import AboutUs from '../../pages/AboutUs';
 import Contact from '../../pages/Contact';
+import Footer from "../../Components/Footer/Footer"
 import { ShoppingCartProvider } from '../../Components/ShoppingCartContext';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
       
       
       </Routes>
+      <Footer/>
       </ShoppingCartProvider>
     </div>
     );

@@ -5,7 +5,7 @@ function AllCategrories({setShoppingCart}) {
 return (
     <div className="container mb-1">
 
-        <h1>Our Items</h1>
+        <h1>All Our Items</h1>
         <Categories/>
         <ItemDisplayer setShoppingCart={setShoppingCart} type="all"/>
 

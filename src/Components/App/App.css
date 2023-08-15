@@ -4,8 +4,11 @@
 
 body {
     scrollbar-width: 0px;
+
+    
   }
 
  a{
     text-decoration: none;
+    color: inherit;
  }

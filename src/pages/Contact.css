@@ -1,0 +1,26 @@
+.submit-button {
+    background-color: var(--main-color);
+    color: var(--light-gray);
+    padding: 1rem 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+
+.contact-text{
+    margin: 0 auto;
+    color: var(--main-color);
+    margin-bottom: 3rem;
+}
+
+.contact-text h2 {
+    padding: 2rem 0;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.contact-text p{
+    font-size: 20px;
+    width: 80%;
+}

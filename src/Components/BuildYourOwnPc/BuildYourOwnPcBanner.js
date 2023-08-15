@@ -8,12 +8,12 @@ function BuildYourOwnPcBanner() {
   return (
     <div className='banner-container'>
         
-        <row className='row position-relative'>
+        <row className='row position-relative container m-auto'>
             <div className='main-img col-12  col-lg-5'>
                 <img width="100%" src={buildPc}/>
             </div>
             <div className='banner-text col-12  col-lg-7'>
-                <h1>Build Your Own PC</h1>
+                <h2>Build Your Own PC</h2>
                 <h4>Design Your Perfect PC Build:</h4>
                 <h5>Tell us your dream specifications, and we'll create a tailored 
                 custom PC just for you. Whether you're a gamer, content creator, or professional, we've got you covered. Our experts at <span>KenoTech</span> will help you choose

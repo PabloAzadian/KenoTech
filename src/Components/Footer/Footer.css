@@ -1,0 +1,27 @@
+.footer-container{
+    background-color: var(--main-color);
+    color: var(--light-gray);
+    text-align: center;
+    margin-top: 3rem;
+    font-family: NotoSansDisplay, NotoSansDisplay-fallback, Arial, sans-serif;
+    padding: 2rem 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.footer-container .container{
+    position: relative;
+}
+
+.footer-container h2 {
+    padding: 1rem;
+    padding-top: 1rem;
+    margin: auto;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+
+

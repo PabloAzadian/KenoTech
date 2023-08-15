@@ -106,6 +106,7 @@ function CheckOut() {
           />
           <Form.Control.Feedback type="invalid">Please provide a last name</Form.Control.Feedback>
         </Form.Group>
+        </Row>
         <Row className="mb-3 mt-3">
         <Form.Group as={Col} md="12" controlId="validationCustomUsername">
           <Form.Label>Phone Number</Form.Label>
@@ -124,7 +125,7 @@ function CheckOut() {
           </InputGroup>
         </Form.Group>
         </Row>
-      </Row>
+      
       <Row className="mb-3">
         <Form.Group as={Col} md="9" controlId="validationCustom03">
           <Form.Label>Address</Form.Label>
