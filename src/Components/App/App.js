@@ -29,18 +29,18 @@ function App() {
     <div>
       <ShoppingCartProvider>
        <NavBar/>
-       <Routes>
+       <Routes >
         <Route path="/" element={<Home />}/>
         <Route path="/all-categories" element={<AllCategrories />}/>
-        <Route path="/Desktops" element={<Computers />}/>
-        <Route path="/Notebooks" element={<Notebooks />}/>
-        <Route path="/Consoles" element={<Consoles />}/>
-        <Route path="/Monitors" element={<Monitors />}/>
-        <Route path="/Headsets" element={<Headsets />}/>
-        <Route path="/BuildYourOwnPc" element={<BuildYourOwnPc/>}/>
-        <Route path="/Checkout" element={<CheckOut/>}/>
-        <Route path="/AboutUs" element={<AboutUs/>}/>
-        <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/desktops" element={<Computers />}/>
+        <Route path="/notebooks" element={<Notebooks />}/>
+        <Route path="/consoles" element={<Consoles />}/>
+        <Route path="/monitors" element={<Monitors />}/>
+        <Route path="/headsets" element={<Headsets />}/>
+        <Route path="/build-your-pc" element={<BuildYourOwnPc/>}/>
+        <Route path="/checkout" element={<CheckOut/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       
       
       
