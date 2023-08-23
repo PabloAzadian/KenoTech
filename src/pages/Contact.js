@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import InputGroup from 'react-bootstrap/InputGroup';
 import "./Contact.css"
+import { Link } from 'react-router-dom';
 
 function Contact() {
   const [validated, setValidated] = useState(false);
@@ -20,6 +21,13 @@ function Contact() {
   }
   return (
     <div className='container'>
+      <div className="category-header">
+        <div className='routes-container gap-3'>
+          <h3><Link to="/">Home</Link></h3>
+          <h4>/</h4>
+          <h2>Contact</h2>
+        </div>
+        </div>
         
         <row className='p-4 row position-relative container m-auto'>
           <div className="contact-text col-12 col-lg-6">

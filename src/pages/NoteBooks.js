@@ -24,7 +24,7 @@ function Notebooks() {
         </div>
       </div>
          
-        <ItemDisplayer type="Laptop and Notebook"/>
+        <ItemDisplayer category="Laptop and Notebook"/>
      </div>
    )
  }

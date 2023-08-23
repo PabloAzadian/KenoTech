@@ -72,7 +72,7 @@ function CheckOut() {
     return totalPrice;
   };
   return (
-    <div className='container'>
+    <div className='page-container container'>
       <h1 className='checkout-title'>Check Out</h1>
       {shoppingCart.length>0 ?
       <div className='row g-4'>

@@ -16,6 +16,7 @@ function ItemDisplayer(props) {
   
     const [displayOption, setDisplayOption] = useState("all")
     const [scrollOffset, setScrollOffset] = useState(432)
+    const itemsToRender = []
 
     
 
@@ -30,7 +31,9 @@ function ItemDisplayer(props) {
   };
 
    const renderComponent = (item, index) => {
+    
     switch (item.category) {
+      
       case 'Desktop Computer':
         return <ComputerBox key={index}  setScrollOffset={setScrollOffset} item={item}/>
       case 'Laptop and Notebook':
@@ -45,59 +48,38 @@ function ItemDisplayer(props) {
         return null; 
     }
   }
-    
+
+      const filtering = () => {
+        if (props.type === "all")
+        { ItemData.map((category, index) =>
+           category.map((item, index) =>
+             itemsToRender.push(item) ))}
+        else if (props.type ==="new") {
+          ItemData.map((category, index) =>
+           category.map((item, index) =>
+             item.new? itemsToRender.push(item): null ))}
+        else if (props.type ==="discounted") {
+          ItemData.map((category, index) =>
+           category.map((item, index) =>
+             item.discount? itemsToRender.push(item): null ))
+        }
+          if (props.category) {ItemData.map((category, index) =>
+            category.map((item, index) =>
+            item.category===props.category? itemsToRender.push(item) : null
+            )
+          )
+          }
+      }
   return (
     <div className='container'>
         {props.title && <h1>{props.title}</h1>}
         
         <div className='group-container d-flex'>
-          <div id={`slider-${props.type}`} className={props.inline? "card-group flex-nowrap w-100% overflow-hidden m-auto"  : "card-group row"}>    
-          {props.type === "all" && ItemData.map((category, index) =>
-          category.map((item, index) =>
-            renderComponent(item)) 
-          )}
-          {props.type === "discounted" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-              item.discount !== 0 ? renderComponent(item) : null
-            )
-          )}
-
-          {props.type === "Desktops" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-            item.category==="Desktop Computer"? renderComponent(item) : null
-            )
-          )
-          }
-          {props.type === "Notebooks" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-            item.category==="Laptop and Notebook"? renderComponent(item) : null
-            )
-          )
-          }
-          {props.type === "Consoles" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-            item.category==="Console"? renderComponent(item) : null
-            )
-          )
-          }
-          {props.type === "Monitors" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-            item.category==="Monitor"?renderComponent(item) : null
-            )
-          )
-          }
-          {props.type === "Headsets" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-            item.category==="Headset"? renderComponent(item) : null
-            )
-          )
-          }
-          {props.type === "new" && ItemData.map((category, index) =>
-            category.map((item, index) =>
-              item.new? renderComponent(item) : null
-            )
-          )
-          }
+          <div id={`slider-${props.type}`} className={props.inline? "card-group flex-nowrap w-100% overflow-hidden m-auto"  : "card-group row"}>  
+          {filtering() } 
+          {itemsToRender.map((item,index) => 
+          renderComponent(item))}
+          
           </div>
           {props.inline && <div className="scroll-buttons">
             <button className="left" onClick={handleScrollLeft}>←</button>

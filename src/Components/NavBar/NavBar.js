@@ -67,9 +67,9 @@ function NavBar(props) {
               </NavDropdown.Item>
             </NavDropdown> */}
             <Nav.Link className="m-auto p-2"><Link to="/all-categories">Categories</Link></Nav.Link>
-            <Nav.Link className="m-auto p-2"><Link to="/BuildYourOwnPc">Build Your PC</Link></Nav.Link>
-            <Nav.Link className="m-auto p-2"><Link to="/AboutUs">About Us</Link></Nav.Link>
-            <Nav.Link className="m-auto p-2"><Link to="/Contact">Contact</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/build-your-pc">Build Your PC</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/about">About Us</Link></Nav.Link>
+            <Nav.Link className="m-auto p-2"><Link to="/contact">Contact</Link></Nav.Link>
             <Nav.Link className="cart-img m-auto p-2"><img
             
                 onClick={() => setShow(true)}
