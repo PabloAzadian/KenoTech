@@ -11,6 +11,7 @@
 .side-cart-item .card img {
     height: 150px;
     width: 150px;
+    padding: 1rem;
 }
 
 .side-cart-item .card-title {

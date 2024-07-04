@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card"
 import { Row, Col, Container, Modal } from 'react-bootstrap';
 import BasketCart from "../../media/icons/basket-cart-icon-27.png"
 import star from "../../media/icons/star icon.png"
-import { useShoppingCart } from '../../Components/ShoppingCartContext';
+import { useShoppingCart } from '../ShoppingCartContext';
 
 
 const discountBadge = (value) => (<h6 className='discount-badge'>{value}$ OFF</h6>)

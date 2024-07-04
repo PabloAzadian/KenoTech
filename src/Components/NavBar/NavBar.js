@@ -70,14 +70,14 @@ function NavBar(props) {
             <Nav.Link className="m-auto p-2"><Link to="/build-your-pc">Build Your PC</Link></Nav.Link>
             <Nav.Link className="m-auto p-2"><Link to="/about">About Us</Link></Nav.Link>
             <Nav.Link className="m-auto p-2"><Link to="/contact">Contact</Link></Nav.Link>
-            <Nav.Link className="cart-img m-auto p-2"><img
-            
+            <Nav.Link className="cart-img m-auto p-2">
+              <img
                 onClick={() => setShow(true)}
                 alt=""
                 src={BasketCart}
                 width="40"
                 height="40"/>
-                {shoppingCart.length>0 && <button onClick={() => setShow(true)} className='cart-item-quantity'>{shoppingCart.length}</button>}
+                {shoppingCart.length>0 && <button onClick={() => setShow(true)} className='cart-item-quantity'><span>{shoppingCart.length}</span></button>}
              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
